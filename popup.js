@@ -2,8 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
   const outputDiv = document.getElementById("output");
-  const API_KEY = 'YOUR_API_KEY';  // Replace with your actual YouTube Data API key
-  const API_URL = 'http://my-elb-2062136355.us-east-1.elb.amazonaws.com:80';
+  const API_KEY = 'AIzaSyBnzwACudfWS5-8q3l1PQydF7mwkd_WUKU';  // Replace with your actual YouTube Data API key
+  const API_URL = 'http://localhost:5000/';
 
   // Get the current tab's URL
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function getSentimentPredictions(comments) {
     try {
-      const response = await fetch(`${API_URL}/predict_with_timestamps`, {
+      const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ comments })
